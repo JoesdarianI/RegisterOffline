@@ -295,13 +295,16 @@ fun DraftList(drafts: List<Member>, onUpload: (Member) -> Unit) {
             Spacer(modifier = Modifier.height(16.dp))
         }
         items(drafts) { draft ->
-            DraftItem(draft, onUpload)
+            DraftItem(index = drafts.indexOf(draft) + 1 ,draft, onUpload)
         }
     }
 }
 
 @Composable
-fun DraftItem(member: Member, onUpload: (Member) -> Unit) {
+fun DraftItem(
+    index: Int,
+    member: Member, onUpload: (Member) -> Unit) {
+
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
@@ -316,7 +319,7 @@ fun DraftItem(member: Member, onUpload: (Member) -> Unit) {
                     modifier = Modifier.size(24.dp)
                 ) {
                     Box(contentAlignment = Alignment.Center) {
-                        Text(text = "1", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                        Text(text = index.toString(), fontSize = 12.sp, fontWeight = FontWeight.Bold)
                     }
                 }
                 Spacer(modifier = Modifier.width(12.dp))
