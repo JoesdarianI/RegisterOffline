@@ -68,4 +68,8 @@ The app uses the following permissions:
 4. Sync Gradle and run the `:app` module.
 
 ---
-*Built with expert Android practices for the Partai Perindo registration flow.*
+##NOTES:
+can't upload bulk because the api return 500 
+{
+    "error": "failed to insert member: failed to insert member: ERROR: column \"nik\" of relation \"members\" does not exist (SQLSTATE 42703)"
+}
